@@ -1,0 +1,44 @@
+Target variable is a categorical attrivute.
+
+- e.g. loan default prediction
+- e.g. drug class response is typically multi-class
+
+Algorithms for classification
+- Decision trees
+- Naive Bayes
+- Linear Discriminat Analysis
+- k-Nearest Neighbor
+- Logistic Regression- Neural Networks
+- Support Vector Machines (SVM)
+
+K-Nearest Neighbor
+
+- Classify based on similarity to near neighbors
+
+Building Decision trees
+
+Drug Dataset
+- Select attributes based on 
+
+A Quick Guide to the Confusion Matrix
+
+A confusion matrix is a performance measurement for classification problem. It is a table with a combination of predicted and actual values. On the y-axis, we have the True label and on the x-axis we have the Predicted label. This example will focus on a binary classifier, i.e. a yes or no model.
+
+ 	Predicted: NO	Predicted: YES
+True: NO	30	30
+True: YES	10	50
+In this matrix, we can see that there are two classes. For example, if we were predicting if an image is a hotdog, "yes" will be a hotdog and "no" will be not a hotdog. We have 120 predictions and out of those times, the classifier predicted "yes" 80 times and "no" 40 times but really, there were 60 "yes"s and 60 "no"s.
+
+When we talk about confusion matrix, we talk about a few terms:
+
+True Positive (TP): Our model predicted "yes", and it was actually "yes"
+True Negative (TN): Our model predicted "no", and it was actually "no"
+False Positive (FP): Our model predicted "yes", but it was actually "no"
+False Negative (FN): Our model predicted "no", but it was actually "yes"
+Let's look at it in the context of our example:
+
+ 	Predicted: NO	Predicted: YES
+True: NO	TN = 30	FP = 30	60
+True: YES	FN = 10	TP = 50	60
+ 	40	80
+Accuracy is the number the model got right over the total number of predictions. This is (TP+TN)/Total Number of Oredictions.

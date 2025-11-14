@@ -1,0 +1,26 @@
+Loss:
+
+- a criterion function that shows the amount of loss
+- e.g. (y - y-hat)^2
+- which yields
+    (y1 - w*x1)^2
+    loss(w) = (val(y1) - w * val(x1))^2
+- calc by setting derivative to its minimum value
+
+Gradient Descent
+- sign of the derivative is the opposite of the number
+- eta parameter is the learning rate
+
+Learning Rate 
+- if rate too high, we overshoot minimum
+- if rate too small, too many iterations to achieve minimum
+
+How to stop Gradient Descent
+- if loss starts increasing...
+- if sign changes
+
+Cost
+- Average loss
+- Function of the slope (weight) and offset (bias)
+
+

@@ -1,0 +1,31 @@
+Classification Method
+
+What is Logistic Regression
+
+- classification algorithm for categorical variables
+- predict a binary outcome
+- independent variables should be continuous
+
+
+Applications for Logistic regression
+- predict probabiity of a heart attack
+- predict mortality in injured patients
+- predict curomter propensity to buy a product
+- predict probabiity of failure
+- predict likelihood of homeowner defaulting on a mortgage  
+
+When to use Logistic Regression
+- data is binary
+- need probablistic results
+- you need a linear decision boundary
+- you need to understand the impact of a feature
+
+To get probability of belonging to a class use sigmoid
+- returns the 
+
+Minimizing the cost function of a model
+
+- Use gradient descent optimization approach
+- Gradient descent is iterative approach to find minimum of the function
+  - Partial derivative of the function
+  

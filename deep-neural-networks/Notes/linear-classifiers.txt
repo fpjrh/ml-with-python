@@ -1,0 +1,58 @@
+
+Data Matrix X
+- Columns represent features 
+- Rows represent samples
+
+Vector y 
+- Represents classification
+
+If dataset can be separated by a line, it is linearly classifiable
+
+Logistic Regression
+
+Pass a function through a logistic function
+
+Possible uses:
+
+1. torch.nn
+
+import torch
+import torch.nn as nn
+import matplotlib.pyplot as plt
+
+z=torch.arange(-100, 100, 0.1).view(-1, 1)
+
+sig = nn.Sigmoid()
+
+yhat = sig(z)
+plt.plot(z.numpy(), yhat.numpy())
+
+2. simply use module
+
+import torch
+import matplotlib.pyplot as plt
+
+z=torch.arange(-100, 100, 0.1).view(-1, 1)
+
+yhat = torch.sigmoid(z)
+plt.plot(z.numpy(), yhat.numpy())
+
+3. nn.Sequential
+
+model = nn.Sequential(nn.Linear(1,1), nn.Sigmoid())
+
+yhat = model(x)
+
+import torch.nn as nn
+class logistic_regression(nn.Nodule):
+
+    def __init__(self, in_size):
+        super(logistic_regression, self).__init__()
+        self.linear = nn.Linear(in_size, 1)
+
+    def forward(self, x):
+        x = torch.sigmoid(self.linear(x))
+        return x 
+#
+model = logistic_regression(1)
+yhat = model(x)

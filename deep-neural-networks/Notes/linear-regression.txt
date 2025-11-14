@@ -1,0 +1,114 @@
+1. predictor    x
+2. target       y
+
+
+Slope is the weight
+Offset is bias
+
+ex
+
+import torch
+w = torch.tensor(2.0, requires_grad=True)
+b = torch.tensor(-1.0, requires_grad=True)
+
+def forward(x):
+    y = w * x + b
+    return y
+#
+x.torch.tensor([1.0])
+
+yhat = forward(x)
+
+Built-in classes:
+
+Class Linear
+
+from torch.nn import Linear
+torch.manual_seed(1)
+
+model = Linear(in_features=1, out_features=1)
+
+y = model(x)
+print(list(model.parameters()))
+
+x = torch.tensor([0.0])
+yhat = model(x)
+
+# Custom module
+import torch.nn as nn
+
+class LR(nn.Module):
+
+    def __init__(self, in_size, out_size):
+        
+        super(LR, self).__init__()
+        self.linear = nn.Linear(in_size, out_size)
+
+    def forward(self, x):
+
+        out = self.linear(x)
+        return out
+#
+model = LR(1, 1)
+model.state_dict()['linear.weight'].data[0] = torch.tensor([0.5153])
+model.state_dict()['linear_bias'].data[0]   = torch.tensor([-0.4414])
+#
+x = torch.tensor([1.0])
+yhat = model(x)
+
+
+import torchw=torch.tensor(-10.0 requires_grad=True)
+X=torch.arange(-3,3,0.1).view(-1, 1)
+f=-3*X 
+import matplotlib.pyplot as pyplot
+plt.plot(X.numpy(), f.numpy())
+plt.show()
+
+Y=f + 0.1*torch.randn(X.size())
+plt.plot(X.numpy(),Y.numpy(), 'ro')
+plt.show()
+
+def forward(x):
+    return w * x
+
+def criterion(yhat,y):
+    return torch.mean((yhat - y) ** 2)
+
+lr = 0.1
+COST=[]
+for epoch in range(4):
+    Yhat = forward(X)
+    loss = criterion(Yhat,Y)
+    loss.backward()
+    w.grad 
+    w.grad.data.zero_()
+    COST.append(loss.item())
+
+etc.
+
+MLR
+- multiple predictor variables
+- bias
+
+x = 1xD tensor
+w = Dx1 tensor
+- perform dot-product of x and w
+
+from torch.nn import Linear
+torch.manual_seed(1)
+
+model=Linear(in_features=2, out_features=1)
+
+list(model.parameters()) # gives the parameters (slope, offset)
+
+# custom module is a class:
+import torch.nn as nn
+class LR(nn.module):
+    def __init__(self, input_size, output_size):
+        super(LR,self).__init__()
+        self.linear = nn.Linear(input_size, output_size)
+    
+    def forward(self, x):
+        out = self.linear(x)
+        return out
+#

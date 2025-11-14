@@ -1,0 +1,130 @@
+0-D: a number
+1-D: an array of number
+
+Tensor types
+- float   
+    torch.*.FloatTensor     (torch.float32)
+    torch.*.DoubleTensor    (torch.float64)
+    torch.*.HalfTensor      (torch.float16)
+- integer
+    torch.*.ByteTensor      (torch.uint8)
+    torch.*.CharTensor      (torch.int8)
+    torch.*.ShortTensor     (torch.int16)
+    torch.*.IntTensor       (torch.int32)
+    torch.*.LongTensor      (torch.int64)
+#
+import torch
+a=torch.tensor([7, 4, 3, 2, 6])
+a.dtype
+b=torch.tensor([7.1, 4.3, 3.14, 2.73, 6.0], dtype=torch.float32)
+#
+# create a 2-d from a 1-d
+c=torch.tensor([7, 4, 3, 2, 6])
+c_col=c.view(5,1)
+or 
+c_col=c.vuew(-1,1)
+#
+numpy_array=np.array([7.1, 4.3, 3.14, 2.73, 6.0])
+torch_tensor = torch.from_numpy(numpy_array)
+
+# Vector addition
+just use 1-d tensors!
+# multiplication with a scalar
+just multiply!
+# vector product (z = u * v)
+just multiply tensors
+# dot product
+torch.dot(u, v)
+# add a constant
+just add it (broadcasting)
+# mean (average of all elements)
+# max
+# multiplication
+
+linspace:
+torch.linspace(start, end, num=steps)
+
+derivatives
+- backwards graph
+- requires_grad is true
+  - is_leaf -> derivative
+
+x = torch.tensor(2, requires_grad=True)
+
+z = x**2 + 2*x +1
+z.backward()
+x.grad -> 6
+
+Partial derivatives
+- example;
+
+u = torch.tensor(1, requires_grad=True)
+v = torch.tensor(2, requires_grad=True)
+
+f=u*v + u**2
+f.backward()
+
+u.grad
+v.grad
+
+Simple Data steps
+- Build a data set class
+- build a transform
+- 
+
+from torch.utils.data import Datset
+class toy_set(Datset):
+    def __init__(self, length=100, transform=None):
+        self.x = 2*torch.ones(length, 2)
+        self.y = torch.ones(length, 1)
+        self.len = length
+        self.transform = transform
+    
+    def __getitem__(self, index):
+        sample = self.x[index], self.y[index]   # returns a tensor tuple
+            if self.transform:
+                sample = self.transform(sample)
+        return sample
+    
+    def __len__(self):
+
+        return self.len
+#
+dataset = toy_set()
+#
+# transform is to normalize or standardize data
+e.g.
+class add_mult(object):
+
+    def __init__(self, addx=1, muly=1):
+        self.addx = addx
+        self.muly = muly
+    
+    def __call__(self.sample):
+        x = sample[0]
+        y = sample[1]
+        x = x + self.addx
+        y = y * self.muly
+        sample = x, y
+
+        return sample
+
+class mult(object):
+
+    def __init__(self, mul=100):
+        self.mul = mul
+    
+    def __call__(self.sample):
+        x = sample[0]
+        y = sample[1]
+        x = x * self.mul
+        y = y * self.mul
+        sample = x, y
+
+        return sample
+
+from torchvision import transforms 
+
+data_transform = transforms.Compose([add_mult(),mult()])
+
+data_set_tr = 

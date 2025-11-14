@@ -1,0 +1,90 @@
+Applications of regression analysis
+- Sales forecasting
+- Satisfaction analysis
+- Price estimation
+- Employment income
+- Engine performance
+- Weather forecasting
+
+Types of algorithms
+- Ordinal regression
+- Poisson regression
+- Fast forest quantile regression
+- Linear, Polynomial, Lasso, Stepwise, Ridge regression
+- Bayesian linear regression
+- Neural network regression
+- Decision forest regression
+- Boosted decision tree regression
+- KNN (K-nearest neighbors)
+
+Linear Regression 
+- Use of a single independent variable to predict
+- Use of multiple variables...Multiple Linear Regression
+
+Simple Linear regression (fast, no tuning of parameters, easy to understand)
+- Take a linear fit of the data
+- aka y = theta(0) + theta(1)*x
+- coefficient is calculated (aka slope)
+- calculate the error against the fitted linear
+  - Mean Residual Error is an indicator of quality of fit
+  - aka R^2 (MSE)
+- How to find the best fit?
+  - Mathematical approach
+    - calculate mean of independent and dependent variables
+      - theta(1) = sum((x(i) - x-mean)(y(i) - y-mean))/sum)(x(i) - x-mean)^2)
+      - theta(0) = y-mean - theta(1)*x-mean
+- Optimization approach
+
+Model Evaluation
+- Train and Test on same dataset
+  - Test set is a subset of only independent variables
+    - Compare the predictions with the actual value_counts
+      - Calculate the error
+- Train/Test Split
+  - Use part for training
+  - Rest for testing
+  - Better for out-of-sample accuracy!
+
+Regression Evaluation Metrics
+-
+
+Training accuracy
+- percentage of correct predictions when using the test dataset
+
+Out-of-Sample accuracy
+- percentage of correct predictions on data that the model has not been trained on
+
+We want high out-of-sample accuracy!
+
+K-fold cross-validation
+- split dataset in K-folds
+  - use part for test and rest for training
+  - average the accuracy of each of the folds
+
+Accuracy Metrics
+- MAE  - mean absolute error 
+- MSE  - mean squared error
+- RMSE - root mean squared error
+- RSE  - relative squared error
+- R^2 = 1 - RSE
+
+Multiple Linear Regression
+- Multiple independent variables to predict
+
+- Independent variables effectiveness on predition 
+- Predict the impact of changes
+
+Find the theta vector
+- Ordinary Least Squares
+  - Minimize the MSE using linear algebra
+  - Time consuming...ok for less than 10K rows
+- Optimization algorithms
+  - Gradient Descent
+    - reduce error iteratively
+    - good for a large dataset
+
+How many independent variables to use...
+- Just the right number
+- Don't overfit, as it loses power of predictions
+- Should independent variables be continuous
+- Linear relationship should exist for each independent variable with the dependent one!

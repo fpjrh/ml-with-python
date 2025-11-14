@@ -1,0 +1,9 @@
+Example cancer prediction
+
+
+Use cases
+- Image recognition
+- Text category assignment
+- Detecting spam
+- Sentiment analysis 
+- Gene expression classification

@@ -1,0 +1,23 @@
+You can also deploy your model via Web Application or Web App . This allows users to interact with your model like a website. They can upload the image with a user interface and view the results. Let's see how we can deploy a web app in CV Studio. In CV Studio, go to the use model section and select New Application. Fill out the window as follows,  giving  your model a name and selecting the Model in this project, select **TEST - 1-click Deploy your Model to Cloud (Code Engine)** and  select the model from the  training run as shown here: 
+
+<p>
+<img  src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CV0101EN-SkillsNetwork/images/Image_2021-05-20_at_8.04_AM.jpeg"  alt="popup" width="400" height="500">
+</p>
+
+
+Then once the window is filled out press the Create Application button and your model will begin deploying.
+<p>
+<img  src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CV0101EN-SkillsNetwork/images/Image_2021-05-20_at_8.07_AM.jpeg"  alt="popup" width="500" height="100">
+</p>
+
+Wait until the status changes from "deploying" to "ready". Once the status changes to ready, your application is ready for you to use!
+
+<p>
+<img  src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CV0101EN-SkillsNetwork/images/Image_2021-05-20_at_8.08_AM.jpeg"  alt="popup" width="500" height="100">
+</p>
+
+You can press the URL to go to your web application.
+<p>
+<img  src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CV0101EN-SkillsNetwork/images/Image_2021-05-20_at_3.12_PM.jpeg"  alt="popup" width="500" height="400">
+</p>
+

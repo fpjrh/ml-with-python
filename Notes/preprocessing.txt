@@ -1,0 +1,93 @@
+Learning objectives
+
+aka
+- Data wrangling
+- Data cleaning
+
+Learning objectives
+- dealing with missing values
+- data formatting
+- data normalization (centering)
+- data binning
+- categorical values
+
+Simple data frame operations
+df["symboling"] = df["symboling"] + 1
+
+Dealing with Missing Values in Python
+
+e.g. ?, N/A, 0 or blank cell
+
+Possible strategies:
+- Check with the data collection source
+- Drop the missing values
+  - drop the variable
+  - drop the data entry
+- Replace missing values
+  - replace it with average of column or similar datapoints
+  - replace by frequency (e.g. diesel vs gasoline)
+  - replace based on other functions
+- Leave it as missing data
+
+How to drop missing values
+- user dataframes.dropna()
+  - axis = 0 for row
+  - axis = 1 for column
+  - inplace = True (do it on current df)
+
+Replace missing values
+- use dataframe.replace(missing_value, new_value)
+e,g,
+mean = df["normalized-losses"].mean()
+df["normalized-losses"].replace(np.nan, mean)
+
+Data normalization
+
+- Uniform the features value with a different range
+  - Make ranges consistent between variables:
+    - e.g. car length might correlate with width and height
+    - e.g. normalize income and age to make impact more akin
+
+Methods:
+- Simple feature scaling (x' = (x/x-max))
+- Min max (x' = (x - x-min)/(x-max - x-min))
+- Z-score (x' = (x - mean) / std-dev)
+
+With Pandas:
+- Simple feature scaling:
+  - df["length"] = df["length"]/df["length"].max()
+- Min-max scaling:
+  - df["length"] = (df["length"] - df["length"].min()) / (df["length"].max() - df["length"].min())
+- Z-score scaling:
+  - df["length"] = (df["length"]/df["length"].max() - df["length"].mean()) / df["length"].std()
+
+Data formatting
+- Data is collected from different places and stored in different formats
+- Bring data into a common standard of expression to make comparisons usable
+
+e.g. convert mpg to 'l/100km' in a dataset:
+df["city-mpg"] = 235/df["city-mpg"]
+df.rename(columns={"city-mpg": "city-L/100km"}, inplace = True)
+
+Fixing incorrect data types:
+- use dataframe.astype() to convert data type
+e.g. df["price"] = df["price"].astype("int")
+
+Binning
+- Grouping values into bins
+
+e.g. car prices
+# get 4 bins
+bins = np.linspace(min(df["price"]). max(dr["price"]), 4)
+group_names = ["Low", "Medium", "High"]
+df["price-binned"] = pd.cut(df["price"], bins, labels=group_names, include_lowest=True)
+
+Turning Categroical variables into quantitative variables
+
+e.g. fuel type
+- add dummy variables for each category
+- assign 0 or 1 to each category
+
+pd.get_dummies(df['fuel'])
+# this creates gas and diesel categories and assign 0/1 to each as appropriate
+

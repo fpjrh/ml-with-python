@@ -1,0 +1,43 @@
+Overview of course objectives:
+- Learn different applications for ML
+- Learn how this applies to various application sets
+
+
+Labs will be in Jupyter Notebook
+
+What do you get from this course?
+- Skills
+ - Regression
+ - Classificaiton
+ - Clustering
+ - Scikit Learn- Scipy
+
+Projects:
+- Cancer detection
+- Predicting economic trends
+- Predicting customer churn
+- Recommendation engines
+
+Into to ML
+
+- High-level intro
+ - Example:
+  - Dataset of samples of tumor cells
+  - Train the model to recognize benign and malignant cells
+
+Machine learning is the subfield of computer science that gives computers the ability to learn without being explicitly programmed
+
+AI components:
+- Computer vision
+- Language processing
+- Creativity
+- etc.
+
+Machine learning:
+- Classifation
+- Clustering
+- Neural Network
+- etc.
+
+Revolution in ML:
+- Deep learning

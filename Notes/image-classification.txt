@@ -1,0 +1,64 @@
+There are lots of challenges in image classification
+
+Cover
+- k-Nearest Neighbors (KNN)
+- Feature extraction
+- Linear classifiers
+
+KNN:
+- Simple
+- Use the most common and nearest classes to the input
+
+Image is represented as a vector
+
+Training/test set 
+- build a model
+- evaluate
+- when good enough use all data to train the model
+
+Slow and limited in its classification prowess
+
+IBM Cloud activation code
+62f3149b5d4d6d221e54c148401d94ba
+
+A Quick Guide to the Confusion Matrix
+
+A confusion matrix is a performance measurement for classification problem. It is a table with a combination of predicted and actual values. On the y-axis, we have the True label and on the x-axis we have the Predicted label. This example will focus on a binary classifier, i.e. a yes or no model.
+
+ 	Predicted: NO	Predicted: YES
+True: NO	30	30
+True: YES	10	50
+In this matrix, we can see that there are two classes. For example, if we were predicting if an image is a hotdog, "yes" will be a hotdog and "no" will be not a hotdog. We have 120 predictions and out of those times, the classifier predicted "yes" 80 times and "no" 40 times but really, there were 60 "yes"s and 60 "no"s.
+
+When we talk about confusion matrix, we talk about a few terms:
+
+True Positive (TP): Our model predicted "yes", and it was actually "yes"
+True Negative (TN): Our model predicted "no", and it was actually "no"
+False Positive (FP): Our model predicted "yes", but it was actually "no"
+False Negative (FN): Our model predicted "no", but it was actually "yes"
+Let's look at it in the context of our example:
+
+ 	Predicted: NO	Predicted: YES
+True: NO	TN = 30	FP = 30	60
+True: YES	FN = 10	TP = 50	60
+ 	40	80
+Accuracy is the number the model got right over the total number of predictions. This is (TP+TN)/Total Number of Oredictions.
+
+Logistic Regression Training:
+- Gradient Descent 
+
+Loss: Classifcation Error 
+- correct: 0
+- incorrect: 1
+- cost = sum(loss)
+
+Reduce the cost over iterations...
+
+Cost: Cross entropy
+- loss( wrong answer, probability of the right answer)
+e.g. answer given was cat (wrong) and probablity of being a dog was 92% (high entropy impact)
+
+Gradient is the slope of the cost function 
+- gradient descent is - n x slope(bias parameter)
+  where n is learning Rectangle
+  

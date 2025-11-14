@@ -1,0 +1,56 @@
+Supervised Deep learning
+
+Convolutional Neural Networks
+- similar to typical Neural Networks
+- difference: 
+  - takes images as inputs (basic assumption)
+  - allow incorporate properties to make them more efficient
+
+CNN Architecture
+- Convolution layer
+- alternates with Pooling layers
+- End in Fully-Connected layer
+
+input
+- n x m x 1 - grayscale
+- n x m x 3 - RGB 
+
+Convolution layer
+- use a filter e.g. 2x2 [[0 , 1], [0, 1]]
+- apply filter to input layer to reduce the input layer
+- convolution makes the computation less expensive
+
+Pooling layer
+- reduce the spatial dimensions 
+- Max pooling (keep highest value)
+- Avg pooling (keep average value)
+- Provides spatial variance to allow for recognition
+
+Fully-Connected layer
+- provides a vector as output
+
+Keras Code 
+
+model = Sequential()
+input_shape = (128, 128, 3)
+model.add(Conv2D(16, kernel_size=(2,2), strides-(1,1),
+                activation='relu',
+                input_shape=input_shape))
+model.add(MaxPooling2D(pool_size=(2,2), strides=(2,2)))
+model.add(Conv2D(32, kernel_size=(2,2), strides=(2,2)))
+model.add(MaxPooling2D(pool_size=(2,2)))
+model.add(Flatten())
+model.add(Dense(100, activation='relu'))
+model.add(Dense(num_classes, activation='softmax'))
+
+
+Recurrent Neural Networks
+- e.g. analyze scenes in a movie 
+- takes output from previous data point as input
+
+Long Short-Term Memory model
+- image generation
+- handwriting generation
+- automatic captioning of images
+- automatic captioning of videos
+

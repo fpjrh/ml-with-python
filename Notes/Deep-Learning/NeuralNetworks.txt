@@ -1,0 +1,28 @@
+Neural Networks
+
+input -> soma -> output
+
+- soma may have hidden layers
+
+1. Forward Propagation
+  - activation function (e.g. Sigmoid function)
+    - should the neuron be activated or not?
+      z = w1 . x1 + b1
+      - w1 = weight
+      - b1 = bias
+    - for a network with 2 neurons, the output of the first neuron is the input of the second neuron
+
+Worked on shallow DNN thus far 
+- shallow - 1 hidden layer
+- deep will have more layers
+- deep will take in more than just a vector
+
+Why did deep learning take off recently
+1. Advancement in the field
+   - ReLu activation function is an example
+2. Data 
+   - Need lots of data!
+   - Avoids overfitting
+3. Computational power
+   - GPUs have made a huge difference!
+

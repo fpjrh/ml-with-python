@@ -1,0 +1,50 @@
+Exploratory Data Analysis
+
+Focus on getting started with data analysis 
+- Summarize main characteristics of the data
+- Gain a better understanding of the data set 
+- Uncover relationships between variables
+- Extract important variables
+
+
+Quetions
+- What are the characteristics which have the most impact on the car price?
+
+- Descriptive Statistics
+- GroupBy
+- ANOVA
+- Correlation
+- Correlation - Statistics
+
+Descriptive Statistics
+
+- Summarize using pandas describe() method 
+- Summarize categorical data by using value_counts() method
+- Box plots provide a good way to see range around median, extremes and outliers
+- Scatter plots for continuous variables
+
+GroupBy
+- panda dataframe.groupby() method
+  = Can apply to categorical variables
+  - Group into categories
+  - Single or multiple variables
+Example:
+df_test = df[['drive-wheels', 'body-style', 'price']]
+df_grp = df_test.groupby(['drive-wheels', 'body-style'], as_index=False).mean()
+# pivot table
+df_pivot = df_grp.pivot(index='drive-wheels', columns='body-style')
+
+Correlation between variables
+- Measures to what extent different variables are interdependent
+
+Pearson CorrelationMeasure the strength of the correlation between two features
+- Correlation coefficient
+    - Close to +1: Large positive relationship
+    - Close to -1: Large negative relationship
+    - Close to 0: No relationship
+- P-value
+  - P-value < 0.001: strong certainty in the result
+  - P-value < 0.05:  moderate certainty in the result
+  - P-value < 0.1:   weak certainty in the result
+  - P-value > 0.1:   No certainty in the result
+  

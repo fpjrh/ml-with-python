@@ -1,0 +1,74 @@
+Gradient Descent
+- Cost function example
+  - finding a minimum 
+  - e.g. z = wx
+    - cf: (z - wx)^2
+- Gradient Descent algorithm aims to iterate to find the lowest point of the cost function
+  - hyperparameter
+    - learning rate: steepness of descent 
+      - large learning rate: big steps might miss minimum
+      - small learning rate: algorithm takes a long time
+- Gradient is the partial derivative of the cost function
+
+Backpropagation
+- algorithm
+  1. calculate the error (E) between the ground truth and the estimated output
+     2 neuron network  
+     E = (1/2) x (T - a(2))^2
+     (MSE used for larger netwwork)
+  2. Propagate the error back into the network and update each weight and bias per the following:
+     w(i) -> w(i) - n x dE/dw(i) (partial derivative of E wrt weight)
+     b(i) -> b(i) - n x dE/db(i) (partial derivative of E wrt bias)
+  3. Use the chain rule to update a specific weight:
+     e.g. w(2) -> w(2) - n x dE/dw(2)
+     E = (1/2) x (T -a(2))^2             -> dE/da(2)
+     a(2) = f(z(2)) = 1 / (1 + e^-z(2))  -> da(2)/dz(2)
+     z(2) = a(1) x w(2) + b(2)           -> dz(2)/dw(2)
+     result is product of derivatives
+
+Training algorithm with Backpropagation
+1. initialize weights and biases
+2. iteratively repeat
+   1. calculate network output using forward propagation
+   2. calculate error between ground truth and estimated/predicted output
+   3. update weights and biases using backpropagation 
+   4. repeat above steps until number of iterations/epoch is reached or
+      error is below a predefined threshold
+
+Vanishing Gradient Problem
+- if the sigmoid function is used as the activation function, gradients tend to vanish, causing slow learning of early neurons in the network.
+
+Activation Functions 
+
+Seven Types
+1. Binary Step Function
+2. Linear Function
+3. Sigmoid Function
+4. Hyperbolic Tangent Function
+5. ReLU (Rectified Linear Unit)
+6. Leaky ReLU
+7. Softmax Function
+
+3, 4, 5 and 7 are most popular
+
+Sigmoid Function
+- a = 1 / (1 + e^-z)
+- as z is outside +/- 3 range gradient becomes small
+
+Hyperbolic Tangent Function
+- a = (e^z - e^-z)/(e^z + e^-z)
+- scaled version of the Sigmoid Function
+- also has Vanishing Gradient issue
+
+ReLU
+- a = max(0, z)
+- most widely used
+- doesn't activate all neurons at the same time 
+- only use in hidden layers
+
+Softmax Function
+- a(i) = e^z(i)/(sum[m/k=1]e^z(k))
+- Type of Sigmoid
+- Handy for classification problem 
+
+

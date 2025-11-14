@@ -1,0 +1,129 @@
+Packages:
+
+- NumPy - math library
+- SciPy - numerical algorithms that are application specific
+- matplotlib
+ (suggested: Take Data Analysis with Python course)
+
+Libraries
+- pandas - data structures
+- scikit learn - algorithms and tools for machine learning
+
+More about scikit learn:
+- free software machine library
+- Classifation, Regression and Clustering algorithms
+- works with NumPy and SciPy
+- Great documentation
+- Easy to implement
+
+Python libraries for data science
+1. scientific computing
+  - pandas (data structures & tools)
+  - NumPy
+  - SciPy
+2. Visualizaiton libraries
+  - matplotlib
+  - seaborn (heat maps, time series, violin plots)
+3. Algortihmic libraries
+  - scikit-learn
+  - statsmodels
+
+
+Getting data into Python
+
+Two important properties
+1. Format
+2. Path
+
+pandas
+- read_csv example:
+
+import pandas as pandas
+url = "https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data"
+df = pd.read_csv(url, header = None)
+- df = data frame
+
+df.head(n) prints first n rows of data frame
+df.tail(n) prints last n rows of data frame
+
+headers = ["symboling", "normalized-losses", "make", "fuel-type", "aspiration", "num-of-doors", "body-style",
+"drive-wheels", "engine-location", "wheel-base", "length", "width", "curb-weight", "engine-type", "num-of-cylinders",
+"engine-size", "fuel-system", "bore", "stroke", "compression-ratio", "horsepower", "peak-rpm", "city-mpg", 
+"highway-mpg", "price"]
+
+ df.columns = headers
+
+- export data to read_csv:
+ df.to_csv(path)
+
+ Pandas to get you started
+
+ - Understand your data before you begin
+
+ - Should check
+   - Data types
+   - Data distribution
+
+- Locate potential issues with the data
+
+Pandas data types:
+- object    python string
+- int64     python int
+- float64   python float 
+- datetime64, timedelta[ns]
+
+Check for
+- potential info and type mismatch
+- compatibility with python methods
+
+Check data types with:
+
+df.dtypes
+
+Statistical summary of data frame
+
+df.describe(include="all")
+- include="all" gets all statistics on the data frame
+
+df.info() gives an overview of the top and bottom 30 rows of the DataFrame, useful for quick visual inspection.
+
+Accessing databases with Python
+- through Jupyter notebook
+
+API calls:
+- connect(db, user, paswd)
+- send("update emloyees...")
+- execute()
+- status_check()
+ end with - disconnect()
+
+ Connection objects:
+ - database connections
+ - manage transactions
+
+ Cursor objects:
+ - database queries
+
+ Connection methods
+ - cursor()       returns a cursor object
+ - commit()       commits a transaction
+ - rollback()     rolls transaction back
+ - close()        closes connection
+
+ Example:
+
+from dmodule import connect
+
+# create connection object
+connection = connect('databasename', 'username', 'pswd')
+
+# create a cursor object
+cursor = connection.cursor()
+
+# run queries
+cursor.execute('select * from mytable')
+results = cursor.fetchall()
+
+# free resources
+cursor.close()
+connection.close()

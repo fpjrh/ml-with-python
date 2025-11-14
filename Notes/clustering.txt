@@ -1,0 +1,86 @@
+Clustering for segmentation (e.g. customers)
+
+Segmentation by finding similarities
+
+Clustering is an unsupervised learning based on common characteristics
+
+
+What is a cluster?
+- A group of onjects that are simmilar to other objects in the cluster, and dissimilar to data points in other clusters
+
+Retail
+- Buying patterns
+- Recommendation systems
+Banking
+- Default predictor
+- Fraud detection (pattern of transactions vs outliers)
+Insurance
+- Fraud detection
+- Insurance risk
+Publication
+- Categorize news articles
+- Recommend similar articles
+Medicine
+- Characterize patient behavior
+Biology
+- Clustering genetic markers to identify family ties
+
+- Exploratory data analysis
+- Summary generation
+- Outlier detection
+- Finding duplicates
+- Pre-processing step
+
+Partition Based Clustering
+- Relatively efficient
+- e.g. k-means, k-median, fuzzy c-means
+- good for sizable data sets
+Hierarchical Clustering
+- Produces trees of clusters
+- e.g. agglomerative, divisive
+- small data sets
+Density-based Clustering
+- Produces arbitrary shaped clusters
+- e.g. DBSCAN
+- spatial clusters
+
+=================
+k-Mean Clustering
+=================
+
+Type of partitioning Clustering
+- Divide data into non-overlapping subsets (clusters) without any structure
+
+How to identify similarity?
+- Use the distance of samples (i.e. dissimilarity)
+
+Calculate Minkowski distance
+
+Normalize to balance impact of each feature
+
+1. Initialize k; e.g. k=3
+   a) allocate 3 random points (centroids)
+2. Calculate distance
+   a) Form a matrix of distances to each centroid
+3. Assign each point to the closest centroid
+   a) SSE error is distance of each point in cluster from its centroids
+4. Compute the new centroids
+   a) Mean of the points
+5. Recompute and repeat 2-4
+
+
+No guarantee of convergence of global optimum
+
+Improve outlook by re-running several times
+
+1. Randomly placing k centroids
+2. Calculate the distance of each point from centroid
+3. Assign each point to its closest centroid
+4. Recalculate the position of the k centroids
+5. Repeat 2-4 until centroids don't move
+
+How do we measure accuracy?
+- Average the distance between data points within a cluster
+  - Helps identify the correct choice of k
+Use mean distance to centroid as a metric for a range of k-values
+- Increasing k always reduces mean distance...find the elbow!

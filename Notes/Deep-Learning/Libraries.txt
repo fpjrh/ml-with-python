@@ -1,0 +1,10 @@
+Popular Libraries:
+
+- TensorFlow
+- Keras
+- PyTorch
+- Theano (no longer supported)
+
+- TensorFlow is most popular (Google)
+- PyTorch is strong competitor (support for GPUs) (Meta)
+- Keras is easiest API to use and great for quick prototyping

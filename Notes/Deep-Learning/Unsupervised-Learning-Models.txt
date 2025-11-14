@@ -1,0 +1,10 @@
+Autoencoders
+
+- Data compression algorithm where compression and decompression functions are learned from the data
+- Data specific
+- Data denoising and dimensionality reduction
+
+Restricted Boltzmann Machines
+- Fixing imbalanced datasets
+- estimate missing values
+- automatic feature extraction

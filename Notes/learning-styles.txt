@@ -1,0 +1,22 @@
+Supervised vs unsupervised learning
+
+What is Supervised learning?
+- We teach the model with labeled Dataset
+  - attributes of each row of data (observation) with labeling of data coming together into a class  
+  - Types of supervised learning
+    - Classifation
+      - process of predicting discrete class labels or categories
+    - Regression
+      - Process of predicting continuous values
+
+
+Unsupervised learning
+- Model works on its own to discover information about unlabeled data
+- Techniques:
+  - Dimension reduction
+  - Density estimation
+  - Market basket analysis 
+  - Clustering
+    - Discovering structure
+    - Summarization
+    - Anomaly detection

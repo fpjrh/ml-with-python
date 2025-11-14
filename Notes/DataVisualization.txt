@@ -1,0 +1,135 @@
+Types of Plots:
+- Line Plots
+- Bar Plots
+- Scatter Plots
+- Histogram
+- Box Plots
+
+Popular plot Libraries
+- matplotlib
+- pandas
+- seaborn
+- Folium 
+- Plotly
+- PyWaffle
+
+matplotlib
+- integrates well with other libraries
+- lots of customization and versatility
+
+pandas
+- data manipulation
+- functions built on matplotlib
+- seamless integration with pandas data structures
+- great for exploratory data analysis
+
+seaborn
+- build on matplotlib
+- great option for specialize statistical visualization
+- multiple plots in a grid layout
+- integrates with pandas
+
+Folium
+- great for geospatial data visualization
+- customizable maps
+
+Plotly
+- interactive plots and dashboards
+- enables plotting in a web browser
+
+PyWaffle
+- visualize categorical data in waffle charts
+
+Matplotlib 
+
+- the what and why and uses
+- created by John Hunter
+- replacement to integrate with matlab
+
+Architecture
+- Backend layer
+  - FigureCanvas
+  - Renderer
+  - Event
+- Artist layer
+  - Knows how to use Renderer to draw on the FigureCanvas
+    - Types of objects
+      = Primitve: Line2D, Rectangle, Circle, and Text
+      = Composite: Axis, Tick, Axes, and Figure
+      Composite artist may contain multiple primitive and composite artist layers
+- Scripting layer 
+  - matplotlib.pyplot interface
+  
+Area Plots
+- Displays magnitue and proportion of multiple variables
+- Based on a line plot
+- Great for comparison
+
+- Using canada immigration dataset
+---
+df_canada
+years=list(range(1980, 2014))
+df_canada.sort_values(['Total'], ascending=False, axis=0, inplace=True)
+df_top5 = df_canada.head()
+df_top5 = df_top5[years].transpose()
+df_top5.plot(kind='area')
+etc
+
+Histograms
+- 
+
+Plotly
+- Interactive, open-source plotting library
+- Over 40 chart types 
+
+Graph objects- low-level interface
+- plotly.graph_objects
+import plotly.graph_objects as go 
+import plotly.express as px
+import numpy as numpy
+
+# set random seed for reproducibility
+np.random.seed(10)
+x = np.arange(12)
+# create random y values
+y = np.random.randint(50, 500, size=12)
+# go is the plotly json object 
+fig = go.Figure(data=go.Scatter(x=x, y=y))
+# update the layout of the figure 
+fig.update_layout(title="Simple Line Plot", xaxis_title='Month',yaxis_title='Sales')
+fig.show()
+# plotly. express...
+fig = px.line(x=x, y=y, title='Simple Line Plot', labels=dict(x='Month',y='Sales'))
+fig.show()
+
+
+Dash 
+- UI python library
+- Dash apps are web servers (aka Insights)
+- Declarative and Reactive
+
+- Core components
+ import dash_core_components as dcc 
+
+- HTML components
+ import dash_html_components as html 
+
+Uses React.js 
+
+Callback functions
+- called automatically by Dash
+
+decorator: @app.callback 
+Two parameters
+- Output 
+  Sets the results returned
+- input
+  Provided to the callback 
+
+  Dash
+  - interface
+    - Data-based?
+
+  Panel
+  - Switching from Jupyter notebooks to stand-alone apps 
+  

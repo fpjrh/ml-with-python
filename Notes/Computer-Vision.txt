@@ -1,0 +1,44 @@
+Lots of applications, so think of a problem/problem set that is solvable through computer visualization
+
+What is a Digital Image?
+- Overview of channels and pixel layout
+- 256 intensity values (0 - 255)
+- Channel indices (0: red, 1: green, 2: blue)
+- JPEG - Joint Photographic Expert Group
+-
+
+Pillow (PIL)
+- Popular python image library
+
+from PIL import Image
+image = Image.open(my_image)
+plt.imshow(image)
+
+image.format:PNG 
+image.size:(512, 512)
+image.mode:RGB
+
+from PIL import ImageOps
+
+image_gray = ImageOps.grayscale(image)
+image_gray.mode:L (luminance)
+image_gray.save("lenna.jpg")
+
+image.quantize(depth)
+red, green, blue = image.split()
+
+OpenCV
+- library for computer visualization
+
+import cv2
+image = cv2.imread(my_image)
+type(image): numpy.ndarray
+image.shape:(512, 512, 3)
+
+import matplotlib.pyplot as plt
+plt.imshow(image) # colors will be off
+
+OpenCV is BGR rather than RGB
+
+Convert using:
+new_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)

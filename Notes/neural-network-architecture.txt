@@ -1,0 +1,42 @@
+Neural Networks
+
+- Make multiclass predictions using neural networks 
+  - add more neurons to the output layer
+
+Activation functions
+- ReLU
+- Dropouts layers prevent overfitting 
+- Batch normalization improvse training
+- skip connection have help deeper networks train 
+  - helps reduce the vanishing gradient issue
+
+Convolutional Networks (CNNs)
+
+- How CNN's build features
+  - Input -> Convolution + ReLU -> Pooling -> Convolution + ReLU -> Pooling 
+  - Neurons 
+    - Kernels are learnable parameters
+      - e.g. kernel + ReLU detects features of image (around eyes, around mouth, etc)
+
+- Adding Layers 
+  - Stack Convolutional Layers
+    - Outputs is inputs into next layer
+- Receptive Field
+  - Size of the region in the input that produces a pixel value in the activation map
+  - Increase the Receptive Field by adding more layers 
+- Pooling
+  - Max Pooling is the favorite
+- Flattening and Fully Connected Neural Layers
+  - Flatten the layer 7x7 -> 1x49
+
+CNN Architectures
+- Popular Architectures
+  - LeNet-5
+    - MNIST dataset
+  - AlexNet
+    63% accuracy
+  - VGGNet
+    - Improvement on AlexNet (smaller kernels, yet deeper)
+  - ResNet 
+    - Uses skip connections
+- Transfer Learning
